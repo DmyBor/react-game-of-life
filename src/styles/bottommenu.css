@@ -1,6 +1,6 @@
 .bottom-menu {
   background-color: #333;
-  width: 42em;
+  width: 40em;
   margin: 0.2em auto;
   margin-bottom: 0px;
   padding: 0 .2em;
@@ -12,8 +12,7 @@
   width: 140px;
   height: 27px;
   font-size: 16px;
-  margin-top: 0px;
-  margin-bottom: 0.5em;
+  margin: 0px 5px 0.5em 0px;
 }
 
 .bottom-menu__text {

@@ -6,18 +6,15 @@ class Board extends Component {
   constructor(props) {
     super(props);
 
-    this.board = [];
-    const rows = 70;
-    const cols = 50;
-
-    for (let i = 0; i < cols; i++) {
-      this.board[i] = [];
-      for (let j = 0; j < rows; j++) {
-        if (j % 29 === 0 && i % 13 === 0) this.board[i][j] = 'alive';
-        else this.board[i][j] = 'dead';
-      }
+    this.state = {
+      board: this.props.board
     }
+  }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      board: nextProps.board
+    })
   }
 
   render () {
@@ -25,10 +22,18 @@ class Board extends Component {
       <table className="board">
         <tbody>
           {
-            this.board.map( (item, index) => (
+            this.state.board.map( (item, index) => (
                 <tr key={index}>
                   {item.map( (cell, cellIndex) => (
-                    <td key={cellIndex} className={`board__cell ${cell}`}></td>
+                    <td
+                      style={{
+                        width: this.props.cell + 'px',
+                        height: this.props.cell +  'px'
+                      }}
+                      onClick={() => this.props.setCell(index, cellIndex)}
+                      key={cellIndex}
+                      className={`board__cell ${cell}`}
+                    ></td>
                   ))}
                 </tr>
             ))

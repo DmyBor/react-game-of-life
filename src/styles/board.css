@@ -8,8 +8,6 @@
 }
 
 .board__cell {
-  width: 11px;
-  height: 11px;
   margin: 0px;
   padding: 0px;
   background: black;
@@ -19,4 +17,8 @@
 
 .alive {
   background: #fbb;
+}
+
+.old {
+  background: rgb(238, 68, 68);
 }

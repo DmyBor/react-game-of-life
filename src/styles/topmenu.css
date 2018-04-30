@@ -1,6 +1,7 @@
 .top-menu {
   background-color: #333;
-  width: 35em;
+  max-width: 38em;
+  display: block;
   margin: 0.2em auto;
   margin-bottom: 0px;
   padding: .3em .2em;
